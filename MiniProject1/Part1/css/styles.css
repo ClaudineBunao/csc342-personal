@@ -1,0 +1,211 @@
+/********** GENERAL STYLES **********/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  /*top*/
+  box-sizing: border-box;
+  background-color: #990000;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+/********** Pack News HEADER **********/
+header {
+  color: white;
+  position: sticky;
+  text-align: center;
+  font-size: 50px;
+  padding: 15px;
+  font-family: "Playfair Display", serif;
+  border: 500px;
+}
+
+.wolf img {
+  width: 20%;
+  border: 5px solid black;
+}
+
+/********** MAIN **********/
+/* main {
+  background-color: blue;
+} */
+
+
+/********** NAVIGATION **********/
+nav {
+  margin: auto auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  width: 90%;
+  padding: 20px;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  /*no bullets*/
+}
+
+nav ul li {
+  /*words in nav*/
+  width: 25%;
+  border-right: 1px solid #000;
+  float: left;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: #fff;
+}
+
+li a:hover:not(.active) {
+  color: red;
+}
+
+
+/********** general **********/
+h1 {
+  text-align: center;
+  background-color: pink;
+  padding: 10px;  
+  font-family: "Playfair Display", serif;
+
+}
+
+h2 {
+  background-color: #FFE0E6;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  background-color: #FFE0E6;
+  color:rgb(116, 7, 7);
+}
+
+/********** campus **********/
+
+.campus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 10px;
+  padding: 0px 70px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  grid-template-areas:
+    "brick hunt"
+}
+
+.brickArticle {
+  /*left column section*/
+  grid-area: brick;
+  padding: 20px;
+  background-color: #FFE0E6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.268), 0 6px 20px 0 rgba(0, 0, 0, 0.268);
+
+}
+
+.brickArticle img {
+  margin: auto;
+  display: block;
+  width: 500px;
+  height: 330px;
+}
+
+.huntArticle {
+  /*right column section*/
+  grid-area: hunt;
+  padding: 20px;
+  background-color: #FFE0E6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.268), 0 6px 20px 0 rgba(0, 0, 0, 0.268);  
+}
+
+.huntArticle img {
+  margin: auto;
+  display: block;
+  width: 500px;
+  height: 330px;
+
+}
+
+/********** sports **********/
+
+.sports {
+  gap: 10px;
+  padding: 0px 70px;
+  justify-content: stretch;
+
+}
+
+.sportsArticle {
+  padding: 20px;
+  background-color: #FFE0E6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.268), 0 6px 20px 0 rgba(0, 0, 0, 0.268);
+}
+
+.sportsArticle img {
+  margin: auto;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+}
+
+.sportsImgs {
+  display: flex;
+	justify-content: space-around;
+}
+
+.sportsImgBW img {
+  filter: grayscale(100%);
+}
+
+
+/********** FOOTER **********/
+footer {
+  background-color: #fff;
+  text-align: center;
+  border: 3px solid #fff;
+  border-top-color: #990000;
+  position: sticky;
+  bottom: 0px;
+  padding: 5px;
+}

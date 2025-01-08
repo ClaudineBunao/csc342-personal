@@ -1,0 +1,12 @@
+name: activity10b
+
+services:
+  app: 
+    build: .  # use dockerfile in backend folder to build the image, instead of using
+    restart: unless-stopped
+    ports:
+    - 3000:3000
+    volumes: #current folder: mount changes on path
+    - ./app.js:/app/app.js
+    - ./static:/app/static
+    - ./templates:/app/templates

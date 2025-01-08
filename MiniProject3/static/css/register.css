@@ -1,0 +1,117 @@
+body {
+  background-color: #231651;
+  margin: 0;
+}
+form h1 {
+  text-align: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+form h2 {
+  color: #B4A0E5;
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+form section {
+  min-width: 400px;
+  width: 500px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+form label {
+  margin-top: 6px;
+}
+
+form input, form textarea, form select {
+  padding: 5px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+form select option:first-of-type {
+  background-color: #DDD;
+}
+
+button {
+  width: 80%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #d6fff6;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9efae6;
+  color: #231651;
+}
+
+button:active {
+  background-color: #D6FFF6;
+}
+
+/* ADD VALIDATION CUES CSS BELOW */
+input:required:valid, select:required:valid {
+  border: 1px solid green;
+}
+
+input:required:invalid,select:required:invalid {
+  border: 1px solid red;
+}
+
+label:has(input:required:valid) {
+  border: 1px solid green;
+}
+label:has(input:required:invalid) {
+  border: 1px solid red;
+}
+
+.sections{
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  /* width: 100%; */
+}
+
+.sender, .recipient, .payment_details {
+  background-color: #D6FFF6;
+  border: 2px solid #999;
+  border-radius: 10px;
+  padding: 20px;
+  width: 33%;
+  margin: 20px;
+
+}
+
+.all {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sections"
+    "submit";
+}
+
+.sections { 
+  grid-area: sections; 
+  width: 900px;
+}
+
+.submit { 
+  grid-area: submit; 
+  height: 50px;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,180 @@
+/********** GENERAL STYLES **********/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #1f5d81;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/********** HEADER **********/
+header {
+  background-color: #990000;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+}
+
+/********** MAIN **********/
+main {
+  background-color: #f5f8fa;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; */
+  grid-template-areas:
+    /* first col nav */
+    "menu input"
+    "menu howls";
+  max-width: 500px;
+  gap: 10px;
+  margin: 0 auto;
+  grid-template-columns: auto 1fr;
+
+}
+
+/********** BACK TO TOP **********/
+#top {
+  /*id use #top*/
+  visibility: hidden;
+  position: absolute;
+  /*no more space */
+}
+
+#backToTop {
+  position: fixed;
+  /* fixed to viewport*/
+  bottom: 45px;
+  /* 20 from bottom */
+  right: 20px;
+  /* 20 from right */
+  background-color: #990000;
+  padding: 15px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/********** NAVIGATION **********/
+nav {
+  background-color: #fff;
+  padding: 15px;
+  position: sticky;
+  top: 65px;
+  /* left: 125px; */
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  grid-area: menu;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 5px;
+  border-bottom: 1px solid #000;
+}
+
+nav ul li:last-of-type {
+  padding: 5px;
+}
+
+/********** INPUT **********/
+#howl-input {
+  background-color: #fff;
+  float: right;
+  padding: 30px;
+  border-radius: 20px;
+  align-items: stretch;
+  gap: 15px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+
+}
+
+#howl-input textarea {
+  padding: 10px;
+  width: 400px;
+  border-radius: 5px;
+  resize: none;
+
+}
+
+#howl-input button {
+  background-color: #f5f8fa;
+  /* float: right; */
+  border-radius: 20px;
+  align-items: stretch;
+  gap: 15px;
+  align-self: flex-end;
+  color: #990000;
+  border-radius: 10px;
+  border-color: #990000;
+  padding: 10px 20px;
+  font-weight: bold;
+  float: right;
+  border: solid;
+  margin: 10px 0pc;
+}
+
+
+/********** HOWLS **********/
+#howl-list {
+  background-color: #f5f8fa;
+  grid-area: howls;
+  margin: 10px;
+}
+
+.howl {
+  padding: 10px;
+  background-color: rgba(0, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.howl .user {
+  font-weight: bold;
+}
+
+.howl .actions {
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 10px;
+  display: flex;
+}
+
+/********** FOOTER **********/
+
+footer {
+  background-color: #fff;
+  text-align: center;
+  border: 3px solid #fff;
+  border-top-color: #990000;
+  position: sticky;
+  bottom: 0px;
+  padding: 5px;
+}

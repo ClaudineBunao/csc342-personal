@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #B4A0E5;
+    color: #231651;
+    width: 100%;
+}
+
+.content, .text-danger {
+    /* center */
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.user {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    color: #231651;
+    padding-right: 1em;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#howlForm, #loginForm  {
+    background-color: #231651;
+    padding: 30px;
+    width: 75%;
+    border: 1px solid #231651;
+    border-radius: 10px;
+    color: #B4A0E5;
+    margin: 10px auto;
+}
+
+.posts {
+    background-color: #231651;
+    padding: 30px;
+    width: 75%;
+    border: 1px solid #231651;
+    border-radius: 10px;
+    color: #B4A0E5;
+    margin: 10px auto;
+}
+
+.header {
+    padding: 10px;
+}
+
+.btn {
+    background-color: #B4A0E5;
+    color: #231651;
+    border: none;
+    margin: 1%;
+}
+
+.howl {
+    border: 1px solid #B4A0E5;
+    /* background-color: #231651; */
+    color: #B4A0E5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.howl-content {
+    /* display: flex; */
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.howl-user {
+    font-size: 0.9em;
+    color: #B4A0E5;
+}
+
+.howl-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;    
+}
+
+#howls {
+    display: flex;
+    flex-direction: column; /* Ensure a vertical layout */
+}

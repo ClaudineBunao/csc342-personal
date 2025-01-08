@@ -1,0 +1,51 @@
+nav {
+    position: absolute;
+    height: 100%;
+    /* hide the nav close but off the page */
+    transform: translate(-300px, 0);
+}
+
+nav.open {
+    /* move to 0,0 on the page when nav is opened (menu is toggled) */
+    transform: translate(0, 0);
+}
+
+/* if the screen size is more than 600px */
+@media screen and (min-width: 600px) {
+    nav {
+        position: relative;
+        /* nav is already on pg */
+        transform: translate(0, 0);
+    }
+
+    /* adds the content on the page after the main content */
+    main::after {
+        content: 'The drawer stays open (and this is shown) if width > 600px';
+    }
+    
+    /* dont need the toggle option */
+    #menuToggle {
+        display: none;
+    }
+
+    main p,
+    nav p {
+        text-decoration: line-through;
+    }
+}
+
+/* when print view */
+@media print {
+    #menuToggle {
+        display: none;
+    }
+
+    main.purple {
+        background-color: white;
+        color: black;
+    }
+
+    nav {
+        display: none;
+    }
+}

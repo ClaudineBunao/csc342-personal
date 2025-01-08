@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Add styles for the customButton class here */
+.customButton {
+  background-color: rgb(239, 239, 239);
+  outline: rgb(118, 118, 118);
+  padding: 2px 7px 2px;
+  font-size: 13.3px ;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-family: arial;
+}
+
+/* Add styles for when the mouse is over the button here */
+.customButton:hover{
+  background-color: #E5E5E5;
+}
+/* Add styles for when the button is being pressed here */
+.customButton:active {
+  background-color: #F5F5F5;
+
+}
+/* Add styles for when the button is given focus here */
+
+.customButton:focus-visible{
+  border: 2px solid black; /* for orange #E59700*/
+}

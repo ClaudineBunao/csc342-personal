@@ -1,0 +1,15 @@
+# Add the services section with a service called database.
+
+services:
+  database:
+    image: mariadb
+    # restart policy for the container to unless-stopped
+    restart: unless-stopped
+    # container will listen on port 3306 in the Docker network. Forward port 3307 on the host machine to port 3306 on the container so that we can easily connect to the database from the host machine.
+    ports:
+      - 3307:3306 #left is host: right is container
+    env_file:
+      - .env
+    # add a volume to the database service that maps the database/db_schema folder to the /docker-entrypoint-initdb.d folder in the container.
+    volumes:
+      - ./database/db_schema:/docker-entrypoint-initdb.d

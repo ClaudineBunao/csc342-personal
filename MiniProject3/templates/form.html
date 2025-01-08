@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms Activity</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/register.css">
+  <script src="js/formValidation.js" type="module"></script>
+  <script src="js/general.js" type="module"></script>
+
+</head>
+
+<body>
+  <form id="myForm" method="POST" action="send" enctype="multipart/form-data" novalidate>
+    <div class="all">
+      <div class="sections">
+        <div class="sender">
+          <h2>Sender Details</h2>
+          <img id="previewImage" alt="Preview" style="max-width: 200px; max-height: 200px;">
+          <br>
+          <input type="file" value="File" id="myImage" name="myImage">
+
+          <br>
+          <label for="senderFirstName">First Name:</label>
+          <input type="text" id="senderFirstName" name="senderFirstName" placeholder="First Name" required>
+          <br>
+
+          <label for="senderLastName">Last Name:</label>
+          <input type="text" id="senderLastName" name="senderLastName" placeholder="Last Name" required>
+        </div>
+
+        <div class="recipient">
+          <h2>Recipient Details</h2>
+          <label for="recipientFirstName">First Name:</label>
+          <input type="text" id="recipientFirstName" name="recipientFirstName" placeholder="First Name" required>
+          <br>
+
+          <label for="recipientLastName">Last Name:</label>
+          <input type="text" id="recipientLastName" name="recipientLastName" placeholder="Last Name" required>
+          <br>
+
+          <label for="myMessage">Message:</label>
+          <input type="text" id="myMessage" name="myMessage" placeholder="Message" required minlength="10">
+          <br>
+
+          <label for="notifyMethod">Notify Recipient:</label>
+
+          <div id="notifyMethod">
+            <input type="radio" id="notifyEmail" name="notifyMethod" value="email">
+            <label for="notifyEmail">Email</label>
+            <input type="radio" id="notifySMS" name="notifyMethod" value="sms">
+            <label for="notifySMS">SMS</label>
+            <input type="radio" id="notifyNone" name="notifyMethod" value="dnn">
+            <label for="notifyNone">Do not notify</label>
+          </div>
+          <br>
+
+          <label for="myEmail">Email:</label>
+          <input type="email" id="myEmail" name="myEmail" placeholder="Email">
+          <br>
+
+          <label for="myPhoneNumber">Phone Number:</label>
+          <input type="text" id="myPhoneNumber" name="myPhoneNumber" placeholder="Phone Number">
+          <br>
+        </div>
+
+        <div class="payment_details">
+          <h2>Payment Details</h2>
+          <label for="card">Card Type:</label>
+          <select name="card" id="card" required>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="aa">American Express</option>
+            <option value="discover">Discover</option>
+          </select>
+          <br>
+
+          <label for="myCardNumber">Card Number:</label>
+          <input type="tel" id="myCardNumber" name="myCardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" inputmode="numeric"
+            pattern="[0-9\s]{16}" autocomplete="cc-number" maxlength="16" required>
+          <br>
+
+          <label for="myExpiration">Expiration:</label>
+          <input type="month" id="myExpiration" name="myExpiration" placeholder="Expiration" min="" required>
+          <br>
+
+          <label for="myCCV">CCV:</label>
+          <input type="password" pattern="[0-9\s]{3,4}" id="myCCV" name="myCCV" placeholder="CVV" minlength="3" maxlength="4" required>
+          <br>
+
+          <label for="myAmount">Amount($):</label>
+          <input type="number" id="myAmount" name="myAmount" placeholder="Amount ($)" step="0.01" required>
+          <br>
+
+          <div>
+            <input type="checkbox" id="myCheckbox" name="myCheckbox" required>
+            <label for="myCheckbox">I agree to the Terms and Conditions:</label>
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div class="submit">
+        <button type="send">Send</button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(this);
+      
+      fetch('send', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.text(); // Expect HTML response
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .then(html => {
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+    });
+  </script> -->
+
+</body>
+
+</html>

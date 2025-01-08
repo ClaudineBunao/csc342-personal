@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #231651;
+  color: #B4A0E5;
+  min-height: 100vh;
+}
+
+a {
+  color: #B4A0E5;
+  text-decoration: none;
+}
+
+body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

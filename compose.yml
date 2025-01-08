@@ -1,0 +1,56 @@
+name: csc342
+
+services:
+  proxy:
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - ./proxy/default.conf.template:/etc/nginx/templates/default.conf.template
+    ports:
+      - "80:80"
+
+  mp1:
+    image: httpd:latest
+    restart: unless-stopped
+    volumes:
+      - ./MiniProject1:/usr/local/apache2/htdocs
+
+  mp2:
+    image: httpd:latest
+    restart: unless-stopped
+    volumes:
+      - ./MiniProject2:/usr/local/apache2/htdocs
+      
+  mp3:
+    build: 
+      context: ./MiniProject3
+      dockerfile: ./Dockerfile # Specify the Dockerfile within the MiniProject3 folder
+    restart: unless-stopped
+    volumes:
+      - ./MiniProject3/server.js:/app/server.js # Mount the server.js file from the MiniProject3 folder
+      - ./MiniProject3/static:/app/static # Mount the static folder
+      - ./MiniProject3/templates:/app/templates # Mount the templates folder
+      
+  mp4:
+    build: 
+      context: ./MiniProject4
+      dockerfile: ./Dockerfile # Specify the Dockerfile within the MiniProject3 folder
+    restart: unless-stopped
+    volumes:
+      - ./MiniProject4/server.js:/app/server.js # Mount the server.js file from the MiniProject4 folder
+      - ./MiniProject4/static:/app/static # Mount the static folder
+      - ./MiniProject4/templates:/app/templates # Mount the templates folder
+      - ./MiniProject4/src:/app/src # Mount the src folder
+
+  mp5:
+      build: 
+        context: ./MiniProject5
+        dockerfile: ./Dockerfile # Specify the Dockerfile within the MiniProject5 folder
+      restart: unless-stopped
+      volumes:
+        - ./MiniProject5/server.js:/app/server.js # Mount the server.js file from the MiniProject5 folder
+        - ./MiniProject5/static:/app/static # Mount the static folder
+        - ./MiniProject5/templates:/app/templates # Mount the templates folder
+        - ./MiniProject5/src:/app/src # Mount the src folder
+        - ./MiniProject5/package.json:/app/package.json # Mount the package.json file
+
